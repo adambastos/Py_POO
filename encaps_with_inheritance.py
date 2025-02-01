@@ -17,4 +17,4 @@ class Aluno(Pessoa):
         print('O aluno está assistindo a aula.')
 
 student = Aluno('Adam', '05952172148')
-student._dormir()
+student._dormir() #Não é uma boa prática chamar por fora um elemento com um _

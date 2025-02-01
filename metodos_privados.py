@@ -23,6 +23,7 @@ Encapsulamento
 
 +altura: float /  #O + significa que o atributo é público
 -cpf: string /  #O - significa que o atributo é privado
+#tamanho: float / O # significa que o atributo é protegido
 
 '''
 
