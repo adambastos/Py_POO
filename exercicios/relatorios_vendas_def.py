@@ -36,5 +36,5 @@ def main(): #A função main() tem o objetivo de integrar todas as funções, co
     relatorio = calcula(vendas)
     exibir = show_relatorio(relatorio)
 
-if __name__ == "__main__":
+if __name__ == "__main__": #Garantir que o código dentro dele seja executado apenas quando o script for executado diretamente, e não quando importado como módulo em outro script.
     main()
