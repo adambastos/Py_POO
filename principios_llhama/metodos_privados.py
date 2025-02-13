@@ -6,7 +6,7 @@ class Pessoa():
 
     def apresentar(self):
         print('Olá, meu nome é {} e tenho {} anos.'.format(self.nome, self.idade))
-        self.__andar() #Eu quero que meu método andar possa ser utilizado pelo método apresentar, mas que não fique visível para outras pessoas.
+        self.__coletar_documento() #Eu quero que meu método andar possa ser utilizado pelo método apresentar, mas que não fique visível para outras pessoas.
     
     def __coletar_documento(self): #Quando eu adiciono __ na frente do nome do método, ele se torna privado, visível apenas dentro da própria classe.
         print('Eu estou andando.')
