@@ -1,38 +1,31 @@
 class Bank():
-    def __init__(self):
-        self.titular = ''
-        self.saldo = 0.0
+    def __init__(self, name, balance, cpf):
+        self.name = name
+        self.balance = balance
     
-    def deposito(self, valor_dep):
-        self.saldo += valor_dep
+
+    def deposit(self, amount):
+        self.balance += amount
+        return self.balance
+
+    def withdraw(self, amount):
+        self.balance -= amount
+        return self.balance
+
+    def get_balance(self):
+        return self.balance
     
-    def saque(self, valor_saque):
-        self.saldo -= valor_saque
+    def transfer(self, amount, account2):
+        self.balance -= amount
+        print(f'Transferência realizada com sucesso! Novo saldo de {self.name}: {self.balance}')
+        account2.balance += amount
+        print(f'Saldo da conta de {account2.name}: {account2.balance}')
+    
 
-    def exibe_saldo(self):
-        print(f'Seu saldo é de {self.saldo}') 
-
-print('Seja bem vindo ao Adam Bank.')
-
-banco = Bank()
-opt_dep = input('Deseja realizar um depósito? S ou N   ').strip().upper()
-if opt_dep == 'S':
-    valor_dep = float(input('Digite o valor do depósito: '))
-    banco.deposito(valor_dep)
-    banco.exibe_saldo()
-elif opt_dep == 'N':
-    print(f'Seu saldo é de {banco.saldo}')
-else: 
-    print('Opção não reconhecida.')
-
-opt_saque = input('Deseja realizar um saque? S ou N   ').strip().upper()
-if opt_saque == 'S':
-    valor_saque = float(input('Digite o valor do saque: '))
-    if valor_saque > banco.saldo:
-        print('Você não possui saldo suficiente.')
-    else:
-        banco.saque(valor_saque)
-    print(f'Seu saldo é de {banco.saldo}')
-elif opt_saque == 'N':
-    print('Obrigado e volte sempre!')
-
+bank = Bank("John", 1000, "12345678900")
+account2 = Bank("Jane", 500, "12345678901")
+print(bank.get_balance())
+print(bank.name)
+bank.transfer(200, account2)
+print(account2.balance)
+print(account2.name)
